@@ -1,0 +1,40 @@
+{
+    padding:0;
+    margin:0;
+    font-size: medium; 
+}
+div.container{
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: aqua;
+    padding:50;
+}
+div.container form{
+    background-color: aliceblue;
+    padding: 15px;
+}
+form h3.title{
+    text-transform: uppercase;
+    text-align: center;
+    color: black;
+    font-size: larger;
+    letter-spacing: 3px;
+}
+form-group{
+    display: block;
+}
+form-control{
+    display: block;
+    width: 100px;
+    padding: 1px;
+}
+label{
+    color: blue;
+}
+button{
+    background-color: aliceblue;
+    color: cadetblue;
+    border-radius: 5;
+    padding: 2px;
+    margin-top: 5px;
+}
