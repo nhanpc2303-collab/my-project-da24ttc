@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bảng Cửu Chương</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Nhập số để xem bảng cửu chương</h1>
+
+<input type="number" id="number" placeholder="Nhập số...">
+<button onclick="hienBang()">Kết Quả</button>
+
+<div id="result"></div>
+
+<script>
+function hienBang() {
+    let n = document.getElementById("number").value;
+    let kq = "";
+
+    if (n === "") {
+        kq = "Vui lòng nhập số!";
+    } else {
+        for (let i = 1; i <= 10; i++) {
+            kq += n + " x " + i + " = " + (n * i) + "<br>";
+        }
+    }
+
+    document.getElementById("result").innerHTML = kq;
+}
+</script>
+
+</body>
+</html>
+                

@@ -1,0 +1,43 @@
+body {
+    font-family: Arial;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+h2 {
+    text-align: center;
+}
+table {
+    width: 80%;
+    margin: auto;
+    border-color: collapse;
+    background-color: white;
+}
+th,td {
+    border: 1px solid #add;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #007bff;
+    color: white;
+}
+input {
+    width: 60px;
+    text-align: center;
+}
+.total {
+    text-align: right;
+    width: 80%;
+    margin: 20px auto;
+    font-size: 18px;
+    font-weight: bold;
+}
+button {
+    dislay: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
