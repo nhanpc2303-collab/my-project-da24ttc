@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Store</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#f4f7fb;
+      color:#222;
+    }
+
+    /* HEADER */
+    header{
+      background:#111827;
+      padding:18px 7%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#fff;
+    }
+
+    .logo span{
+      color:#00bfff;
+    }
+
+    nav{
+      display:flex;
+      gap:25px;
+    }
+
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      font-size:15px;
+      transition:.3s;
+    }
+
+    nav a:hover{
+      color:#00bfff;
+    }
+
+    .header-icons{
+      display:flex;
+      gap:15px;
+      color:#fff;
+      font-size:20px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      width:100%;
+      height:500px;
+      background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+      url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1400') center/cover;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:#fff;
+    }
+
+    .hero-content h1{
+      font-size:55px;
+      margin-bottom:15px;
+    }
+
+    .hero-content p{
+      font-size:18px;
+      margin-bottom:25px;
+    }
+
+    .hero-content button{
+      padding:14px 35px;
+      border:none;
+      border-radius:40px;
+      background:#00bfff;
+      color:#fff;
+      font-size:16px;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .hero-content button:hover{
+      background:#0095cc;
+      transform:translateY(-3px);
+    }
+
+    /* CATEGORY */
+    .category{
+      padding:60px 7%;
+    }
+
+    .title{
+      text-align:center;
+      margin-bottom:40px;
+    }
+
+    .title h2{
+      font-size:35px;
+      color:#111827;
+    }
+
+    .category-list{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:25px;
+    }
+
+    .category-card{
+      background:#fff;
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      transition:.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    }
+
+    .category-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .category-card img{
+      width:80px;
+      margin-bottom:15px;
+    }
+
+    .category-card h3{
+      font-size:18px;
+      margin-bottom:10px;
+    }
+
+    /* PRODUCTS */
+    .products{
+      padding:20px 7% 80px;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .product-card{
+      background:#fff;
+      border-radius:20px;
+      overflow:hidden;
+      transition:.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.08);
+      position:relative;
+    }
+
+    .product-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .sale{
+      position:absolute;
+      top:15px;
+      left:15px;
+      background:#ff3b30;
+      color:#fff;
+      padding:5px 12px;
+      border-radius:20px;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .product-card img{
+      width:100%;
+      height:240px;
+      object-fit:cover;
+    }
+
+    .product-info{
+      padding:20px;
+    }
+
+    .product-info h3{
+      font-size:18px;
+      margin-bottom:10px;
+    }
+
+    .price{
+      color:#00bfff;
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:15px;
+    }
+
+    .old-price{
+      color:#999;
+      text-decoration:line-through;
+      font-size:14px;
+      margin-left:8px;
+    }
+
+    .product-info button{
+      width:100%;
+      padding:12px;
+      border:none;
+      border-radius:12px;
+      background:#111827;
+      color:#fff;
+      cursor:pointer;
+      transition:.3s;
+      font-size:15px;
+    }
+
+    .product-info button:hover{
+      background:#00bfff;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#111827;
+      color:#fff;
+      padding:40px 7%;
+      text-align:center;
+    }
+
+    footer p{
+      opacity:.8;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+
+      nav{
+        display:none;
+      }
+
+      .hero-content h1{
+        font-size:38px;
+      }
+
+      .hero{
+        height:400px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+
+    <div class="logo">TECH<span>STORE</span></div>
+
+    <nav>
+      <a href="#">Trang Chủ</a>
+      <a href="#">Sản Phẩm</a>
+      <a href="#">Gaming Gear</a>
+      <a href="#">Khuyến Mãi</a>
+      <a href="#">Liên Hệ</a>
+    </nav>
+
+    <div class="header-icons">
+      🔍
+      🛒
+      👤
+    </div>
+
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+      <h1>Gaming Setup Đỉnh Cao</h1>
+      <p>Chuột • Bàn phím • Tai nghe • PC Gaming</p>
+      <button>Mua Ngay</button>
+    </div>
+
+  </section>
+
+  <!-- CATEGORY -->
+  <section class="category">
+
+    <div class="title">
+      <h2>Danh Mục Nổi Bật</h2>
+    </div>
+
+    <div class="category-list">
+
+      <div class="category-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1792/1792927.png">
+        <h3>Gaming Mouse</h3>
+        <p>Chuột gaming cao cấp</p>
+      </div>
+
+      <div class="category-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3659/3659899.png">
+        <h3>Keyboard</h3>
+        <p>Bàn phím RGB cực đẹp</p>
+      </div>
+
+      <div class="category-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3050/3050525.png">
+        <h3>Headphone</h3>
+        <p>Âm thanh chất lượng</p>
+      </div>
+
+      <div class="category-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3474/3474360.png">
+        <h3>PC Gaming</h3>
+        <p>Hiệu năng mạnh mẽ</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+
+    <div class="title">
+      <h2>Sản Phẩm Hot</h2>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- PRODUCT -->
+      <div class="product-card">
+
+        <div class="sale">-20%</div>
+
+        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1000">
+
+        <div class="product-info">
+
+          <h3>Tai Nghe Gaming RGB</h3>
+
+          <div class="price">
+            799.000đ
+            <span class="old-price">999.000đ</span>
+          </div>
+
+          <button>Thêm Vào Giỏ</button>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT -->
+      <div class="product-card">
+
+        <div class="sale">-10%</div>
+
+        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=1000">
+
+        <div class="product-info">
+
+          <h3>Chuột Gaming Wireless</h3>
+
+          <div class="price">
+            499.000đ
+            <span class="old-price">599.000đ</span>
+          </div>
+
+          <button>Thêm Vào Giỏ</button>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT -->
+      <div class="product-card">
+
+        <div class="sale">-15%</div>
+
+        <img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?q=80&w=1000">
+
+        <div class="product-info">
+
+          <h3>Bàn Phím Cơ RGB</h3>
+
+          <div class="price">
+            1.290.000đ
+            <span class="old-price">1.500.000đ</span>
+          </div>
+
+          <button>Thêm Vào Giỏ</button>
+
+        </div>
+
+      </div>
+
+      <!-- PRODUCT -->
+      <div class="product-card">
+
+        <div class="sale">NEW</div>
+
+        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1000">
+
+        <div class="product-info">
+
+          <h3>Laptop Gaming RTX</h3>
+
+          <div class="price">
+            24.990.000đ
+          </div>
+
+          <button>Thêm Vào Giỏ</button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <h2>TECHSTORE</h2>
+    <br>
+    <p>Website bán thiết bị gaming hiện đại</p>
+
+  </footer>
+
+</body>
+</html>
